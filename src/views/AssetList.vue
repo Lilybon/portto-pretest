@@ -22,16 +22,20 @@
             :name="asset.name"
           />
         </RouterLink>
+        <div v-if="loading" class="capitalize">loading...</div>
       </div>
     </template>
   </DefaultLayout>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, Ref, ref } from 'vue';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import Header from '@/components/Header.vue';
 import AssetCard from '@/components/AssetCard.vue';
+import { MemberDetailRES, MemberListRES } from '@/api/types';
+import { useConditionWatcher } from 'vue-condition-watcher';
+import opensea from '@/api/opensea'
 
 export default defineComponent({
   name: 'AssetList',
@@ -41,16 +45,24 @@ export default defineComponent({
     AssetCard
   },
   setup () {
-    const assets = ref(Array.from(Array(6), (_, index) => ({
-      token_id: `token-${index}`,
-      asset_contract: {
-        address: `address-${index}`
+    const assets: Ref<MemberDetailRES[]> = ref([]);
+    const { loading } = useConditionWatcher({
+      defaultParams: {
+        format: 'json',
+        owner: process.env.VUE_APP_TEST_ACCOUNT,
+        limit: 20,
       },
-      image_url: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop',
-      name: `cat-${index}`
-    })));
+      conditions: {
+        offset: 0,
+      },
+      fetcher: opensea.fetchAssetList,
+      afterFetch: (res: MemberListRES) => {
+        assets.value = res.assets;
+      }
+    });
 
     return {
+      loading,
       assets
     };
   }

@@ -2135,6 +2135,13 @@ aws4@^1.8.0:
   resolved "https://registry.nlark.com/aws4/download/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha1-1h9G2DslGSUOJ4Ta9bCUeai0HFk=
 
+axios@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
+  integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+  dependencies:
+    follow-redirects "^1.14.4"
+
 babel-code-frame@^6.22.0:
   version "6.26.0"
   resolved "https://registry.npmmirror.com/babel-code-frame/download/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -4348,7 +4355,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.14.4:
   version "1.14.5"
   resolved "https://registry.npmmirror.com/follow-redirects/download/follow-redirects-1.14.5.tgz?cache=0&sync_timestamp=1635857937985&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ffollow-redirects%2Fdownload%2Ffollow-redirects-1.14.5.tgz#f09a5848981d3c772b5392309778523f8d85c381"
   integrity sha1-8JpYSJgdPHcrU5Iwl3hSP42Fw4E=
@@ -8984,6 +8991,18 @@ vue-cli-plugin-tailwind@^2.2.17:
   version "2.2.17"
   resolved "https://registry.npmmirror.com/vue-cli-plugin-tailwind/download/vue-cli-plugin-tailwind-2.2.17.tgz#39a38611b0f4d2698e980a272602599832122324"
   integrity sha512-fZRcLYtdqkz6pVyBj2beh2+jOS4h1cKFRVwfjc4VdftauOflw+qPR2FQXQ8PTNqa+VLEyDMRYaj/gZV4i3lGgg==
+
+vue-condition-watcher@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/vue-condition-watcher/-/vue-condition-watcher-0.1.12.tgz#cacb418096da1ac211890d7de9f84c063446bf12"
+  integrity sha512-UZeUe7o7ivvILooMRVmIIacBa9TFJ8ySMB4+DB+dO5bX1hRWYu/xL1ynTjS2ZTAINdb3OgIglo6eNCUHV3gJcQ==
+  dependencies:
+    vue-demi "^0.11.2"
+
+vue-demi@^0.11.2:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.11.4.tgz#6101992fe4724cf5634018a16e953f3052e94e2a"
+  integrity sha512-/3xFwzSykLW2HiiLie43a+FFgNOcokbBJ+fzvFXd0r2T8MYohqvphUyDQ8lbAwzQ3Dlcrb1c9ykifGkhSIAk6A==
 
 vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.10.0:
   version "7.11.0"
