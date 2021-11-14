@@ -1,24 +1,18 @@
 # portto-pretest
 
-## Project setup
-```
-yarn install
-```
+You can view online demo at ease on [here](xxx).
+## Features
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+1. Asset list and detail page
+2. Tiny infinite scroll component for vue 3 support
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Extra
 
-### Lints and fixes files
-```
-yarn lint
-```
+1. Login feature with Metamask plugin and Web3.js
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Tools
+
+1. [Vue CLI](https://github.com/vuejs/vue-cli)
+2. [TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
+3. [vue-condition-watcher](https://github.com/runkids/vue-condition-watcher)
+4. [axios](https://github.com/axios/axios)
