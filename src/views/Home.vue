@@ -1,10 +1,13 @@
 <template>
   <DefaultLayout>
     <template v-slot:header>
-      <Header :title="'Home'"/>
+      <Header :title="'home'"/>
     </template>
     <template v-slot:default>
-      <div>Home</div>
+      <div class="p-2">
+        <!-- metamask login here -->
+        <RouterLink :to="{ name: 'AssetList' }">Navigate to AssetList</RouterLink>
+      </div>
     </template>
   </DefaultLayout>
 </template>

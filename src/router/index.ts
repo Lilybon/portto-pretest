@@ -7,6 +7,16 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/assets/',
+    name: 'AssetList',
+    component: () => import('../views/AssetList.vue')
+  },
+  {
+    path: '/assets/:contractAddress/:tokenId',
+    name: 'AssetDetail',
+    component: () => import('../views/AssetDetail.vue')
+  }
 ]
 
 const router = createRouter({

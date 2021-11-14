@@ -1,9 +1,9 @@
 <template>
   <div>
-    <header class="fixed left-0 top-0 right-0 h-14">
+    <header class="fixed left-0 top-0 right-0 h-12">
       <slot name="header"></slot>
     </header>
-    <main name="main" class="mx-auto pt-14 px-6 max-w-screen-md">
+    <main name="main" class="mx-auto pt-12 px-6 max-w-screen-md">
       <slot />
     </main>
   </div>
