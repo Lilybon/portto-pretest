@@ -16,6 +16,11 @@ const routes = [
     path: '/assets/:contractAddress/:tokenId',
     name: 'AssetDetail',
     component: () => import('../views/AssetDetail.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('../views/NotFound.vue')
   }
 ]
 

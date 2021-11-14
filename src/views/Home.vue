@@ -6,7 +6,7 @@
     <template v-slot:default>
       <div class="p-2">
         <!-- metamask login here -->
-        <RouterLink :to="{ name: 'AssetList' }">Navigate to AssetList</RouterLink>
+        <RouterLink :to="{ name: 'AssetList' }" class="underline">Navigate to AssetList</RouterLink>
       </div>
     </template>
   </DefaultLayout>
