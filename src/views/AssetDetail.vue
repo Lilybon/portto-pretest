@@ -7,7 +7,7 @@
       <div class="flex flex-col items-center pt-2 px-2 pb-14">
         <img
           class="w-full"
-          :src="asset.image_url"
+          v-lazy="asset.image_url"
           :alt="`${asset.name} image`"
         />
         <h5 class="mb-2 font-bold text-2xl">{{ asset.name }}</h5>
