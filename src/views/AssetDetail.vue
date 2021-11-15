@@ -17,8 +17,10 @@
             rel="noopener"
             :href="asset.permalink"
             target="_blank"
-            class="block py-1 h-full text-center bg-blue text-white rounded capitalize"
-          >permalink</a>
+            class="block w-full h-full"
+          >
+            <VButton class="w-full">permalink</VButton>
+          </a>
         </div>
       </div>
     </template>
@@ -29,6 +31,7 @@
 import { defineComponent, reactive } from 'vue';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import Header from '@/components/Header.vue';
+import VButton from '@/components/VButton.vue';
 import opensea from '@/api/opensea';
 import { useRoute } from 'vue-router';
 
@@ -36,7 +39,8 @@ export default defineComponent({
   name: 'AssetDetail',
   components: {
     DefaultLayout,
-    Header
+    Header,
+    VButton
   },
   setup () {
     const route = useRoute();

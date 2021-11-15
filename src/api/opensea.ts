@@ -5,7 +5,7 @@ import {
 } from '@/api/types';
 
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API_SCHEME + process.env.VUE_APP_BASE_API_HOST + process.env.VUE_APP_BASE_API,
+  baseURL: `${process.env.VUE_APP_BASE_API_SCHEME}${process.env.VUE_APP_BASE_API_HOST}${process.env.VUE_APP_BASE_API}`,
 });
 
 instance.interceptors.response.use(response => response.data);

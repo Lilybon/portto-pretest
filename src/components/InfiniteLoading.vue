@@ -1,7 +1,5 @@
 <template>
-  <div ref="el">
-    <slot />
-  </div>
+  <div ref="el" />
 </template>
 
 <script lang="ts">
@@ -12,7 +10,7 @@ export default defineComponent({
   props: {
     rootMargin: {
       type: String,
-      default: '0px 0px 60px 0px',
+      default: '0px 0px 80px 0px',
       required: false
     },
     threshold: {

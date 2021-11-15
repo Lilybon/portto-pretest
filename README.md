@@ -7,7 +7,7 @@ You can view online demo at ease on [here](https://nifty-lamport-8b3539.netlify.
 2. 404 page
 3. Tiny infinite scroll component for vue 3 support
 
-## Bonus (todo)
+## Bonus (> 4 hours)
 
 1. Login feature with Metamask plugin and Web3.js
 

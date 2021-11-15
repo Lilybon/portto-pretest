@@ -22,7 +22,7 @@
             :name="asset.name"
           />
         </RouterLink>
-        <div v-if="loading">Loading...</div> 
+        <p class="my-3 w-full text-center">{{ noMoreAssets ? 'No more assets' : loading ? 'Loading...' : '' }}</p>
         <InfiniteLoading @infinite="addMore" />
       </div>
     </template>
@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, Ref, ref } from 'vue';
+import { defineComponent, inject, Ref, ref } from 'vue';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import Header from '@/components/Header.vue';
 import AssetCard from '@/components/AssetCard.vue';
@@ -38,6 +38,7 @@ import InfiniteLoading from '@/components/InfiniteLoading.vue'
 import { MemberDetailRES, MemberListRES } from '@/api/types';
 import { useConditionWatcher } from 'vue-condition-watcher';
 import opensea from '@/api/opensea'
+import { UserKey } from '@/symbols';
 
 export default defineComponent({
   name: 'AssetList',
@@ -48,13 +49,15 @@ export default defineComponent({
     InfiniteLoading
   },
   setup () {
+    const user = inject(UserKey);
+
     const assets: Ref<MemberDetailRES[]> = ref([]);
     const noMoreAssets: Ref<boolean> = ref(false);
     
     const { loading, conditions } = useConditionWatcher({
       defaultParams: {
         format: 'json',
-        owner: process.env.VUE_APP_TEST_ACCOUNT,
+        owner: user?.coinbase,
         limit: 20,
       },
       conditions: {
@@ -73,6 +76,7 @@ export default defineComponent({
     };
 
     return {
+      noMoreAssets,
       loading,
       assets,
       addMore
